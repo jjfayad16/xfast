@@ -1,0 +1,14 @@
+<h1 class="page-header">Extração <?php echo $this->nome; ?></h1>
+<form action="#" method="POST" class="form-inline">
+    <div class="form-group">      
+        <label>CAPTCHA:</label>
+        <img src="<?php echo EXT_PATH."procon_i/".$this->img; ?>" class="img-circle" height="100px" width="120px" />
+    </div>
+    <div class="form-group">    
+        <input id="CaptchaStr" type="text" size="16" class="form-control" name="CaptchaStr">
+        <input id="idbase" type="hidden" name="idbase" value="<?php echo $this->id; ?>">
+    </div>
+    <div class="form-group">
+        <input id="consultar" type="button" value="PROCESSAR" class="btn btn-primary btn-lg" style="font-size:9px;" onclick="javascript:submitSindec()" name="consultar"  /> 
+    </div>
+ </form>

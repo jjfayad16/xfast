@@ -1,0 +1,28 @@
+<?php 
+$conteudo = explode("/",$this->resultado['url']);
+$urlBase = $conteudo[0]."//".$conteudo[2];
+?>
+<div style="float:left; width: 44%;">
+<input type="button" onclick="teste('<?php echo $urlBase; ?>/sindecconsulta/defaultfornecedor.asp')"value="SINDEC"/> - 
+<input type="button" onclick="teste('<?php echo $urlBase; ?>/sindecconsulta/anexocip/frm_anexofa.asp?view=1&web=1&strcodfa=<?php echo $this->resultado['nu_fa']; ?>')"value="IR ANEXO"/> - 
+<input type="button" onclick="teste('http://atender.caixa')"value="REGISTRAR ATENDER"/><BR>
+    Procon: <?php echo $this->resultado['no_municipio']; ?> <br>
+    Usuario: <?php echo $this->resultado['usuario']; ?> <br>
+    Senha: <?php echo $this->resultado['senha']; ?> <br> <br>
+    Dados para Registro:<br>
+    Tipo: <?php echo $this->resultado['tipo']; ?> <br>
+    Reclamante: <?php echo $this->resultado['no_consumidor']; ?> <br>
+    Número FA: <?php echo $this->resultado['nu_fa']; ?><br>
+    Data Procon: <?php echo $this->resultado['dt_procon']; ?> <br>
+    Manifesto:<br><div style="border:1px solid #94a2bf; padding: 2px; overflow: auto; width: 98%; height: 423px;"><?php echo $this->resultado['manifesto']; ?></div>
+</div><br>
+<div style="border:1px solid #94a2bf; padding: 5px; float: right; overflow: auto; width: 55%;" id="sindec">
+<!-- <object width="900" height="520" data="http://atender.caixa" name="sindec" id="sindec"></object></div>
+<!-- <iframe src="http://sindecmunicipal.procon.sp.gov.br/sindecconsulta/defaultfornecedor.asp" width="920" height="600" name="sindec" id="sindec"></iframe><br> 
+<object width="900" height="520" data="<?php echo $urlBase; ?>/sindecconsulta/defaultfornecedor.asp"></object> --> </div>
+<script type="text/javascript">
+function teste(idFa) {
+    var url = '<object width="900" height="520" data="'+idFa+'"></object>';
+    jQuery("#sindec").html(url);
+};
+</script>

@@ -1,0 +1,42 @@
+<script type="text/javascript" src="<?php echo EXT_PATH ?>js/usuario/ver.js"></script>
+
+<div id="editar">
+				<p class="caminho"></p>
+				<ul class="tabs">
+					<li><a>Usu&aacute;rio</a></li>
+				</ul>
+				<div id="tab1">
+					<form method="post" action="#" class="form" id="form_salvar" name="form_salvar">
+						<div class="container_col">
+						<div class="col3">
+							<p class="tit_form">Dados</p>
+							<div class="row">
+								<label for="nome">Nome completo:</label>
+								<h1><?php echo $this->usuario['no_usuario']?></h1>
+							</div> <!-- fecha row -->
+
+							<div class="row">
+								<label for="login">Login:</label>
+								<h1><?php echo $this->usuario['no_login']?></h1>
+							</div> <!-- fecha row -->
+
+							<div class="row">
+								<label for="email">E-mail:</label>
+								<h1><?php echo $this->usuario['no_email']?></h1>
+							</div> <!-- fecha row -->
+						</div><!-- fecha col-->
+						<div class="col3">
+						</div>
+						
+						</div>
+						<div  class="clearfix"> </div>
+						<p class="obrigatorio"></p>
+						<div class="btn">
+							<div id="errorDiv1" class="error-div"></div>
+							<a href="javascript:acao('/usuario')" class="uibutton" id="btnCancelar">Voltar</a>
+						</div><!-- fecha btn-->
+						
+					</form>
+				</div><!-- fecha tab1 -->
+
+			</div><!-- fecha listagemClientes -->

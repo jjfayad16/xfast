@@ -1,0 +1,200 @@
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="<?php echo EXT_PATH; ?>css/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo EXT_PATH; ?>css/design.css" type="text/css" media="screen" />
+	<!-- <link rel="stylesheet" href="<?php echo EXT_PATH; ?>css/flexipage.css" type="text/css" media="screen" /><!-- para a pagina&ccedil;&atilde;o -->
+	<link rel="stylesheet" href="<?php echo EXT_PATH; ?>css/tab.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo EXT_PATH; ?>css/fb-buttons.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo EXT_PATH; ?>css/colorbox.css" type="text/css" media="screen" /> <!-- para a janela modal -->
+	<link rel="stylesheet" href="<?php echo EXT_PATH; ?>css/redmond/jquery-ui-1.8.21.custom.css" type="text/css" media="screen" /> <!-- para o date picker-->
+	<script type="text/javascript" src="<?php echo EXT_PATH; ?>js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="<?php echo EXT_PATH; ?>js/jquery-ui-1.8.21.custom.min.js"></script> <!-- para o date picker-->
+	<script type="text/javascript" src="<?php echo EXT_PATH; ?>js/jquery.corner.js"></script><!-- para os cantos arredondados -->
+	<script type="text/javascript" src="<?php echo EXT_PATH ?>js/jquery.validate.js"></script>
+	<script type="text/javascript" src="<?php echo EXT_PATH; ?>js/jquery.colorbox.js"></script> <!-- para a janela modal-->
+	<script type="text/javascript" src="<?php echo EXT_PATH; ?>js/jquery.dataTables.js"></script>
+	<title>Sistema de Controle Imobili&aacute;rio</title>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#topo,#menu,#alertas, table#tit, #loading').corner('10px'); // para os cantos arredondados
+
+			$(".toggle_container").hide(); // para o menu toggle
+			$("h3.trigger").click(function(){
+				$(this).toggleClass("active").next().slideToggle("slow");
+			});
+			
+			$("#logout").click(function () {
+				  $("#conteudo").hide().load('<?php echo $this->baseUrl ?>/auth/logout');
+				});
+			
+
+			$('ul.tabs').each(function(){ // para o tab do editar
+				// For each set of tabs, we want to keep track of
+				// which tab is active and it's associated content
+				var $active, $content, $links = $(this).find('a');
+	
+				// Use the first link as the initial active tab
+				$active = $links.first().addClass('active');
+				$content = $($active.attr('href'));
+	
+				// Hide the remaining content
+				$links.not(':first').each(function () {
+					$($(this).attr('href')).hide();
+				});
+	
+				// Bind the click event handler
+				$(this).on('click', 'a', function(e){
+					// Make the old tab inactive.
+					$active.removeClass('active');
+					$content.hide();
+	
+					// Update the variables with the new link and content
+					$active = $(this);
+					$content = $($(this).attr('href'));
+	
+					// Make the tab active.
+					$active.addClass('active');
+					$content.show();
+	
+					// Prevent the anchor's default click action
+					e.preventDefault();
+				});
+			});
+
+			 $(".inline").colorbox({inline:true, width:"50%"});
+				//Example of preserving a JavaScript event for inline calls.
+				$("#click").click(function(){ 
+					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+					return false;
+			});
+
+			$(function() {
+					$( "#datepicker, #datepicker2" ).datepicker({
+						showOn: "button",
+						buttonImage: "<?php echo EXT_PATH; ?>images/calendar.gif",
+						buttonImageOnly: true
+					});
+				});
+			$("#loading").bind("ajaxStart", function(){
+				$(this).show();
+				}).bind("ajaxStop", function(){
+				$(this).fadeOut(500);
+				});
+	
+		 });
+		 
+		 function list(){
+			$("#conteudo").hide().load('<?php echo $this->baseUrl ?>/index/list').fadeIn(2000);
+		 };
+		 function userlist(){
+			$("#conteudo").hide();
+			$("#conteudo").load('<?php echo $this->baseUrl ?>/usuario/index').fadeIn(2000);
+		 };
+		 
+		 function edit(){
+			$("#conteudo").hide().load('<?php echo $this->baseUrl ?>/index/edit').fadeIn(2000);
+		 };
+		 
+		 function novo(){
+			$("#conteudo").hide().load('<?php echo $this->baseUrl ?>/index/edit').fadeIn(2000);
+		 };
+		 function newUser(){
+			$("#conteudo").hide();
+			$("#conteudo").load('<?php echo $this->baseUrl ?>/usuario/new').fadeIn(2000);
+		 };
+</script>
+</head>
+<body>
+	<div class="container clearfix">
+	
+		<div id="topo" class="clearfix">
+			<h1>Sistema de Controle Imobili&aacute;rio</h1>
+			<div id="teste"></div>
+			<img src="<?php echo EXT_PATH; ?>images/icon_logout.png" width="16" height="16" alt="Logout" id="logout" class="iconLogout" />
+			<p><a href="<?php echo $this->baseUrl ?>/auth/logout">Usu&aacute;rio: <?php echo $this->escape($this->user->no_usuario); ?></a></p>
+		</div><!-- fecha topo-->
+
+		<div id="header"> 
+			<div id="menu">
+				<h3 class="trigger"><a>Clientes</a></h3>
+				<div class="toggle_container" style="display: none;">
+					<div class="block">
+						<p><a href="javascript:list()">Locador</a></p>
+						<p><a href="#">Vendedor</a></p>
+						<p><a href="#">Locat&oacute;rio</a></p>
+						<p><a href="#">Comprador</a></p>
+					</div><!-- fecha block -->
+				</div> <!-- fecha toggle_container -->
+				
+				<h3 class="trigger"><a href="#">Im&oacute;veis</a></h3>
+				<div class="toggle_container" style="display: none;">
+					<div class="block">
+						<p><a href="#">Venda</a></p>
+						<p><a href="#">Aluguel</a></p>
+					</div><!-- fecha block -->
+				</div> <!-- fecha toggle_container -->
+
+				<h3 class="trigger"><a href="#">Contratos</a></h3>
+				<div class="toggle_container" style="display: none;">
+					<div class="block">
+						<p><a href="#">Imobili&aacute;ria</a></p>
+						<p><a href="#">Venda</a></p>
+						<p><a href="#">Aluguel</a></p>
+					</div><!-- fecha block -->
+				</div> <!-- fecha toggle_container -->
+
+				<h3 class="trigger"><a href="#">Relat&oacute;rios</a></h3>
+				<div class="toggle_container" style="display: none;">
+					<div class="block">
+						<p><a href="#">Listagem Clientes</a></p>
+						<p><a href="#">Tipo 2</a></p>
+					</div><!-- fecha block -->
+				</div> <!-- fecha toggle_container -->
+
+				<h3 class="trigger"><a>Seguran&ccedil;a</a></h3>
+				<div class="toggle_container" style="display: none;">
+					<div class="block">
+						<p><a href="javascript:userlist()">Usu&aacute;rio</a></p>
+						<p><a href="#">Perfil</a></p>
+					</div><!-- fecha block -->
+				</div> <!-- fecha toggle_container -->
+			</div><!-- fecha menu-->
+
+			<div id="alertas">
+				<p class="tit_alertas">alertas</p>
+				<p>3 - Boletos vencidos</p>
+				<p>4 - Boletos a vencer</p>
+				<p>5 - Contratos a vencer</p>
+			</div><!-- fecha alertas-->
+
+		</div><!-- fecha header-->
+		
+		<div id="loading" class="load"><img src="<?php echo EXT_PATH; ?>images/carregando6.gif" /></div>
+		<div id="conteudo" class="clearfix">
+		
+			<?php echo $this->layout()->content; ?>
+			
+		</div> <!--fecha conteudo-->
+
+	</div><!-- fecha container -->
+
+
+
+
+		<!-- a janela modal para o bot&atilde;o salvar - This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content' style='padding:10px; background:#fff;'>
+			<p><strong>This content comes from a hidden element on this page.</strong></p>
+			<p>The inline option preserves bound JavaScript events and changes, and it puts the content back where it came from when it is closed.</p>
+			<p><a id="click" href="#" style='padding:5px; background:#ccc;'>Click me, it will be preserved!</a></p>
+
+			<p><strong>If you try to open a new ColorBox while it is already open, it will update itself with the new content.</strong></p>
+			<p>Updating Content Example:<br />
+			<a class="ajax" href="../content/flash.html">Click here to load new content</a></p>
+			</div>
+		</div>
+
+
+</body>
+</html>

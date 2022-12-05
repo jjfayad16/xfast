@@ -1,0 +1,588 @@
+body {
+	background: #E6E6FA;
+	font: 11px "Trebuchet MS", Tahoma;
+}
+a 		{ 	text-decoration: none; 		}
+a:hover { 	text-decoration: underline; }
+.container {
+	width:98%;
+	margin: 0 1% 0 1%;
+}
+.caminho {
+	color: 7a8183;
+	text-transform: capitalize;
+	font-size: 10px;
+	padding: 5px 0;
+}
+/*********** INÍCIO TOPO ***********/
+#topo {
+	background:#0039BA;
+
+	/* Para Mozilla/Gecko (Firefox etc) */
+	/* background: -moz-linear-gradient(top, MediumBlue, #000080) repeat-X; */
+
+	/* Para WebKit (Safari, Google Chrome etc) */
+	/* background: -webkit-gradient(linear, left top, left bottom, from(MediumBlue), to(#000080)) repeat-X; */
+
+	/* Para IE 8 */
+	/* -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=MediumBlue, endColorstr=#000080)"; */
+
+	/* Para IE 5.5 - 7 */
+	/* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=MediumBlue, endColorstr=#000080); */
+	
+	width: 100%;
+	height: 60px;
+	margin-top: 14px;
+}
+#topo h1 {
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	top: -10px;
+	padding: 0 0 0 0;
+	float: left;
+	display: inline-block; /* essa linha e a 32 tem por conta do bug do IE por causa do float */ 
+	position: relative;
+        width: 99%;
+}
+#topo h2 {
+	margin-right: 10px;
+	color: white;
+	font-weight: bold;
+	font-size: 12px;
+	float: right;
+	width:auto;
+	top:40px;
+	position: relative;
+	display: inline-block;
+}
+#topo img.iconLogout {
+	float:left;	
+	margin-left:10px;
+	display: block;
+	position: realtive;
+}
+#topo img.iconCaixa {
+	float:left;	
+	margin-left:10px;
+	margin-top:10px;
+	display: block;
+	position: realtive;
+}
+/*********** FIM TOPO ***********/
+
+#header{ /* contém a coluna do menu e dos alertas*/
+	width: 13.5%;
+	margin-top: 10px;
+	float: left;
+	display: inline;
+	position: relative;
+}
+/*********** INÍCIO MENU TOGGLE ***********/
+.formulario { 
+    margin-top:5px;
+    padding: 5px;
+    height: 240px; width: 500px;
+    border: 1px #ccc solid;
+    background: #ebe7e0; 
+}
+.formulario label {
+	color: black;
+        font: 10px Arial,Helvetica,sans-serif;
+	line-height: 17px;
+	font-weight: bold;
+	float: left;
+        text-align: right;
+	display: inline;
+	position: relative;
+	width: 120px; 
+        margin-right: 10px;
+}
+.formulario .row {padding:2px; margin:0px; width: 490px; float:left; }
+.formulario .row p {
+    padding:2px; margin-left:10px; width: 450px; float:left; text-align: left; border-bottom: 1px solid black;
+}
+.formulario .row img {
+    margin-left:70px; width: 220px; float:left; display: block; 
+}
+.formulario .row {padding:2px; margin:0px; width: 900px;; float:left }
+.formulario .row input {
+    margin:0px; float:left; text-align: left; padding: 3px; background:#B0C4DE no-repeat 900px; margin-right: 5px;
+}
+.btn {
+	float: right;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+	padding-top: 5px;
+	border-top: 1px solid #5e5e5e;
+	text-align: right;
+	height: 50px;
+	width: 95%;
+}
+.btn input {
+    float: right;
+    width: 100px;
+    height: 35px;
+    font-size: 12px;
+}
+#cont1 {
+	display: block;
+	position: relative;	
+	border: 1px solid black;
+	margin-bottom: 10px;
+}
+#cont2 {
+	display: block;
+	background: white;
+	height: 150px;
+	position: relative;	
+}
+#cont3 {
+	display: block;
+	background: white;
+	height: 150px;
+	position: relative;	
+}
+#menu {
+	background:#0039BA; 
+	
+	/* Para Mozilla/Gecko (Firefox etc) */
+	/* background: -moz-linear-gradient(top, #0039BA, #000080) repeat-X; */
+
+	/* Para WebKit (Safari, Google Chrome etc) */
+	/* background: -webkit-gradient(linear, left top, left bottom, from(#0039BA), to(#000080)) repeat-X; */
+
+	/* Para IE 8 */
+	/* -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#0039BA, endColorstr=#000080)"; */
+
+	/* Para IE 5.5 - 7 */
+	/* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0039BA, endColorstr=#000080); */
+	padding: 3% 5%;
+	width: 90%;
+}
+h3.trigger {
+	display: block;
+	padding: 0 0 0 18px;
+	margin: 0 0 18px 0;
+	background: url("../images/icon_menu_mais.png") no-repeat;
+	font: 12px Arial;
+	/*float: left;*/
+}
+h3.trigger a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+}
+h3.trigger a:hover {
+	color: #ccc;
+}
+h3.active { background: url("../images/icon_menu_menos.png") no-repeat; }
+
+.toggle_container {
+	/*margin: 12px 0 0 17px;*/
+	overflow: hidden;
+	clear: both;
+}
+.toggle_container .block {
+	padding: 0 0 0 17px;
+	margin: 0 0 20px 0;
+}
+.toggle_container .block p {
+	height: 22px;
+}
+.toggle_container .block p a {
+	background: url("../images/icon_menu_sub.png") no-repeat;
+	padding: 0 0 0 19px;
+	font: 12px Verdana;
+	font-weight: normal;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+}
+.toggle_container .block p a:hover {
+	color: #ccc;
+}
+/*********** FIM MENU TOGGLE ***********/
+
+/*********** INÍCIO ALERTAS ***********/
+#mensagem {
+	border: 2px outset #428bca;
+	position: absolute;
+	top: 50px;
+	left:25%;
+	display:block;
+	width: 50%;
+        background: #428bca;
+	
+	/* Para Mozilla/Gecko (Firefox etc) */
+	/* background: -moz-linear-gradient(top, #6699CC, #336699) repeat-X ;
+	/* Para WebKit (Safari, Google Chrome etc) */
+	/* background: -webkit-gradient(linear, left top, left bottom, from(#6699CC), to(#336699)) repeat-X;
+	/* Para IE 8 */
+	/* -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#6699CC, endColorstr=#336699)";
+	/* Para IE 5.5 - 7 */
+	/* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6699CC, endColorstr=#336699); */
+	text-align:center;
+	color:white;
+	padding: 2px 55px 2px 55px;
+	margin-top: 10px;
+	font: 12px Verdana;
+	font-weight: bold;
+}
+#mensagem p {
+	display:inline;
+}
+#mensagem p a {
+	display:inline;
+	text-decoration:none;
+	color:#00CC00;
+	position:relative;
+}
+#alertas {
+	background:#0039BA; 
+	
+	/* Para Mozilla/Gecko (Firefox etc) */
+	/* background: -moz-linear-gradient(top, #0039BA, #000080) repeat-X; */
+
+	/* Para WebKit (Safari, Google Chrome etc) */
+	/* background: -webkit-gradient(linear, left top, left bottom, from(#0039BA), to(#000080)) repeat-X; */
+
+	/* Para IE 8 */
+	/* -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#0039BA, endColorstr=#000080)"; */
+
+	/* Para IE 5.5 - 7 */
+	/* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0039BA, endColorstr=#000080); */
+	padding: 3% 5%;
+	width: 90%;
+	margin-top: 10px;
+	font: 12px Arial;
+	float:left;
+}
+#alertas p {
+	color: #fff;
+	line-height: 24px;
+}
+#alertas p.tit_alertas {
+	color: #ebe7e0;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 0;
+	padding: 15px 0;
+	margin-bottom: 17px;
+	border-bottom: 1px solid #87a3b8;
+}
+#alertas span.alertas {
+	/* Para Mozilla/Gecko (Firefox etc) */
+	background: -moz-linear-gradient(top, #00CC00, #006600) repeat-X;
+	/* Para WebKit (Safari, Google Chrome etc) */
+	background: -webkit-gradient(linear, left top, left bottom, from(#00CC00), to(#006600)) repeat-X;
+	/* Para IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00CC00, endColorstr=#006600)";
+	/* Para IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00CC00, endColorstr=#006600);
+	font: 10px Tahoma;
+	padding:3x 3px 3px 3px;
+	float:right;
+	font-weight: normal;
+	margin-right:10px;
+	top:3px;
+	position:relative;
+	border: 0px groove #006600;
+	color: white;
+	display:inline-block;
+	text-align:center;
+    width: 15px;
+	height:15px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	
+}
+/*********** FIM ALERTAS ***********/
+
+/*********** INÍCIO CONTEÚDO - PÁGINAS INTERNAS ***********/
+#conteudo {
+	width: 99%;
+	float: left;
+        background: white;
+	display: inline;
+	position: relative;
+	margin-top: 0;
+        padding: 5px;
+}
+/*********** FIM CONTEÚDO - PÁGINAS INTERNAS ***********/
+
+/*********** INÍCIO TABELAS ***********/
+table{
+	width:100%;
+	/*margin-bottom:1em;*/
+	border: 1px solid #a5abad;
+	background: #fff;
+	color: #071012;
+	font-size: 11px;
+}
+th{
+	font-weight:bold;
+	font-size: 12px;
+	color: #5c5c5c;
+	padding: 6px 0;
+}
+td{
+	padding: 10px 10px 10px 0;
+}
+.load {
+	position:absolute; 
+	margin-left:50%; 
+        left:-115px;
+	top: 200px; 
+	display:block;
+	z-index:999;
+}
+.nav1 {	background: #e5e5e5; }
+.nav2 {	
+	/* Para Mozilla/Gecko (Firefox etc) */
+	background: -moz-linear-gradient(top, white, #999999) repeat-X ;
+
+	/* Para WebKit (Safari, Google Chrome etc) */
+	background: -webkit-gradient(linear, left top, left bottom, from(white), to(#999999)) repeat-X;
+
+	/* Para IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=white, endColorstr=#999999)";
+
+	/* Para IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=white, endColorstr=#999999);
+}
+.nav3 {
+	height:10px;
+}
+table tr td input {
+	margin: 0 -10px 0 10px;
+}
+img.iconNav {
+	margin: 0 9px 0 15px;
+}
+span.tit_table {
+	color: #000;
+	font-size: 12px;
+	float: right;
+	margin-right: 16px;
+}
+/*********** FIM TABELAS ***********/
+.col label.error  { font-size:10px;color: #5e5e5e; position:relative; height:1px;float:left;margin-left:95px; margin-top:-4px; width:auto; display: inline;}
+.col3 label.error  { font-size:10px;color: #5e5e5e; position:relative; height:1px;float:left;margin-left:115px; margin-top:-4px; width:auto; display: inline;}
+.col input.error, .col3 input.error, .col select.error, .col3 select.error, .col textarea.error, .col3 textarea.error  { background-color:#FFEFEF; border-color:#BB6666; color:#660000; }
+
+
+/******* INÍCIO específicos da tabela pelo jquery dele *******/
+#example td, #example2 td, #example3 td{
+	padding: 5px;
+	line-height: 18px;
+}
+#example_length, #example2_length, #example3_length {
+	float: left;
+	width: 40%;
+	height: 10px;
+	line-height: 10px;
+	padding: 5px 0;
+	margin: 0 5px;
+}
+#example_filter, #example2_filter, #example3_filter {
+	float: right;
+	text-align: right;
+	width: 50%;
+	padding: 5px 0;
+	margin: 0 5px;
+	line-height: 10px;
+}
+.ui-helper-clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+#example_info, #example2_info, #example3_info {
+	float: left;
+	width: 50%;
+	padding: 5px 0;
+	margin: 0 5px;
+	height: 22px;
+	line-height: 22px;
+}
+#example_paginate, #example2_paginate, #example3_paginate {
+	float: right;
+	text-align: right;
+	width: auto;
+	padding: 5px 0;
+	margin: 0 5px;
+	line-height: 22px;
+}
+#example_last, #example2_last {
+	padding: 2px 6px;
+}
+#example_previous, #example_next, #example2_previous, #example2_next, #example3_previous, #example3_next {
+	padding: 2px 6px;
+}
+#example_first, #example2_first, #example3_first {
+	padding: 2px 6px;
+}
+.ui-state-default {
+	padding: 2px 6px;
+	cursor: pointer;
+}
+.ui-state-disabled {
+	cursor: pointer;
+}
+.css_right {
+	float: right;
+}
+table.display thead th {
+	cursor: pointer;
+}
+table.display {
+	border-collapse: collapse;
+}
+/******* FIM específicos da tabela pelo jquery dele *******/
+
+/*********** INÍCIO JANELA MODAL ***********/
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+  
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:920px;
+  height:370px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+
+#boxes #modal {
+  width:928px; 
+  min-height:430px;
+  padding:10px;
+  background-color:#ffffff;
+}
+/*********** FIM JANELA MODAL ***********/
+
+
+/*********** INÍCIO FORMULÁRIOS ***********/
+form {
+
+}
+p.tit_form {
+	padding: 0 0 3px 10px;
+	border-bottom: 1px solid #b2b2b2;
+	margin-bottom: 10px;
+}
+p.obrigatorio {
+	color: #d10101;
+	margin-top: 30px;
+	width: 830px;
+	height: 20px;
+}
+.cole{
+	width: 98%; 
+	float: left;
+	display: inline;
+	position: relative;
+	margin-right: 10px;
+}
+.col3 {
+	width: 550px; 
+	float: left;
+	display: inline;
+	position: relative;
+	margin-right: 10px;
+}
+.col {
+	width: 320px; 
+	float: left;
+	display: inline;
+	position: relative;
+	margin-right: 10px;
+}
+
+.divcole {
+	width: 550px; 
+	float: left;
+	display: inline;
+	position: relative;
+	margin-right: 10px;
+}
+.divcold {
+	width: 320px; 
+	float: left;
+	display: inline;
+	position: relative;
+	margin-right: 10px;
+}
+.col .row{
+	margin-bottom:10px;
+}
+.col3 .row {
+	margin-bottom:15px;
+}
+.col label {
+	font: 10px "MS Trebuchet", Arial, sans-serif;
+	text-align: right;
+	line-height: 17px;
+	font-weight: bold;
+	float: left;
+	display: inline;
+	position: relative;
+	margin-right: 5px;
+	width: 90px; 
+}
+.col3 label {
+	font: 10px "MS Trebuchet", Arial, sans-serif;
+	text-align: right;
+	line-height: 17px;
+	font-weight: bold;
+	float: left;
+	display: inline;
+	position: relative;
+	margin-right: 5px;
+	width: 110px; 
+}
+.col input {
+	border: 1px solid #b2b2b2;
+	height: 19px;
+	font-size: 10px;
+}
+.col3 input {
+	border: 1px solid #b2b2b2;
+	height: 19px;
+	font-size: 10px;
+}
+.col textarea, .col3 textarea, .col select, .col3 select {
+	border: 1px solid #b2b2b2;
+	font-size: 10px;
+}
+
+.container_col {
+	float: left;
+	display: inline;
+	position: relative;
+}
+.ui-datepicker-trigger {
+	margin: 0 0 -2px 3px;
+}
+/*********** FIM FORMULÁRIOS ***********/
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}

@@ -1,0 +1,128 @@
+#examples {
+  padding:2em 0 1em 20em;
+  width:67em;
+}
+
+#content ul{
+  margin:0;
+  padding:0;
+  padding:1em 0 2em 0;
+}
+
+#content ul li{
+  list-style-type:none;
+  font-size:1.2em;
+  background:url('../images/bullet.gif') no-repeat  left .4em;
+  padding:0 0 .4em 1.3em;
+}
+
+pre {
+  background:#F2F2F2;
+  border:2px solid #FAE4E0;
+  padding:1.6em;
+  font-size:1.3em;
+  margin:-1em 0 2.2em 0;
+  color:#666;
+}
+
+#examples pre {
+  margin:1em 0 2.2em 0;
+}
+
+
+
+
+code {
+  margin-bottom:1em;
+  display:block;
+}
+
+.pager {
+  overflow:hidden;
+  padding-top:1em;
+}
+
+.pager li{
+  float:left;
+  list-style-type:none;
+  margin-right:.3em;
+  font-size:1.1em;
+}
+.pager li a {
+  font: 12px "Trebuchet MS", Tahoma;
+  color: #000fd5;
+}
+.actual {
+  padding-left: 4px;
+}
+.total {
+  padding-right: 4px;
+}
+
+.disabled a{
+  text-decoration:line-through;
+}
+
+
+/*CSS for examples*/
+
+
+
+
+.example-6 {
+  overflow:hidden;
+  width:500px;
+}
+
+.example-6 li {
+  float:left;
+}
+
+/* Needed for carousel*/
+.flexiwrap {
+  width:100px;
+  height:75px;
+}
+
+.example-8,
+.example-9{
+  width:8888px;
+}
+
+.example-8 a,
+.example-9 a{
+  width:100px;
+  height:75px;
+}
+
+.example-8 li,
+.example-9 li{
+  float:left;
+}
+
+.example-8 li,
+.example-9 li,
+.example-8 img,
+.example-9 img {
+  display:block;
+}
+
+
+
+
+.large-carousel img{
+  display:block;
+}
+
+.large-carousel .flexiwrap{
+  width:500px;
+}
+
+.large-carousel .flexiwrap li{
+  float:left;
+  list-style:none;
+}
+
+.large-carousel .flexiwrap ul{
+  width:99999px;
+}

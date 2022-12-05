@@ -1,0 +1,40 @@
+<?php header ("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+        header ("Last-Modified: " . gmdate("D,d M YH:i:s") . " GMT");
+        header ("Cache-Control: no-cache, must-revalidate");
+        header ("Pragma: no-cache");
+        header ("Content-type: application/x-msexcel");
+        header ("Content-Disposition: attachment; filename=\"Resolubilidade Unidade.xls\"" );
+        header ("Content-Description: PHP Generated Data" );
+
+?>
+
+<table>
+    <thead>
+        <tr>
+            <th>Unidade</th>
+            <th>Produto</th>
+            <th>Motivo</th>
+            <th>tipo</th>
+            <th>Mes</th>
+            <th>Resolvidas</th>
+            <th>N.Resolvidas</th>
+            <th>Total</th>
+            <th>Resolubilidade</th>
+        </tr>
+    </thead>
+    <tbody>
+<?php foreach ($this->resultado as $res) { ?>
+        <tr>
+            <td><?php echo $res['unidade']; ?></td>
+            <td><?php echo utf8_decode($res['no_item']); ?></td>
+            <td><?php echo utf8_decode($res['no_motivo']); ?></td>
+            <td><?php echo $res['tipo']; ?></td>            
+            <td><?php echo $res['dt_mes']; ?></td>
+            <td><?php echo $res['res']; ?></td>
+            <td><?php echo $res['nres']; ?></td>
+            <td><?php echo $res['total']; ?></td>
+            <td><?php echo number_format($res['resol'],2,',','.'); ?></td>
+        </tr>
+<?php } ?>
+    </tbody>
+</table>

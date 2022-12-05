@@ -1,0 +1,33 @@
+<?php
+
+    header ("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+    header ("Last-Modified: " . gmdate("D,d M YH:i:s") . " GMT");
+    header ("Cache-Control: no-cache, must-revalidate");
+    header ("Pragma: no-cache");
+    header ("Content-type: application/x-msexcel");
+    header ("Content-Disposition: attachment; filename=\"Relatório detalhado-" . gmdate("Y-m-d") . ".xls\"" );
+    header ("Content-Description: PHP Generated Data" );
+                
+?>
+<table cellpadding='1' id="example" class="example">
+    <thead>
+        <tr>
+            <?php foreach ($this->batimento['indices'] as $indices) { ?>
+                <th><?php echo $indices; ?></th>
+            <?php } ?>
+            <th>unidade responsável</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php 
+            $i = $this->batimento['indice']+1;
+            $j = 0;
+        foreach ($this->batimento['valores'] as $dados) { ?>
+        <tr>
+            <?php while ($i > $j) { ?>
+            <td><?php echo $dados[$j];?></td>
+            <?php $j++; } $j=0; ?>
+        </tr>
+        <?php } ?>
+    </tbody>
+</table>

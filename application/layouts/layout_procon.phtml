@@ -1,0 +1,25 @@
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<title>Extração PROCON</title>
+        <script type="text/javascript" src="<?php echo EXT_PATH; ?>js/jquery-1.8.3.js"></script>
+        <script type="text/javascript" src="<?php echo EXT_PATH; ?>js/layout.js"></script>
+        <link rel="stylesheet" href="<?php echo EXT_PATH; ?>css/design.css" type="text/css" media="screen" />
+</head>
+<body>
+	<input type="hidden" id="base" value="<?php echo BASE_URL; ?>" />
+        <input type="hidden" id="idsindec" name="idsindec" value="0" />
+        <div class="container">
+            <div id="topo" class="clearfix">
+                <center><h1>PROCON - SISTEMA DE EXTRAÇÃO DE DADOS DOS SINDECS</h1></center>
+                        <!-- <h3 style="color:white; float:left; margin-right: 5px;">Desenvolvido por: Jo&atilde;o Eduardo Fayad Milken</h3> -->
+			<div id="mensagem" class="mensagem"></div>
+		</div><!-- fecha topo-->
+		<div id="conteudo" class="clearfix">
+		
+			<?php echo $this->layout()->content; ?>
+			
+		</div> <!--fecha conteudo-->
+        </div>
+</body>
+</html>

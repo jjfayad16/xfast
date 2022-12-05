@@ -1,0 +1,106 @@
+<script type="text/javascript">
+jQuery(document).ready(function(){
+		jQuery('ul.tabs').each(function(){ // para o tab do editar
+				// For each set of tabs, we want to keep track of
+				// which tab is active and it's associated content
+				var $active, $content, $links = jQuery(this).find('a');
+	
+				// Use the first link as the initial active tab
+				$active = $links.first().addClass('active');
+				$content = jQuery($active.attr('href'));
+	
+				// Hide the remaining content
+				$links.not(':first').each(function () {
+					jQuery(jQuery(this).attr('href')).hide();
+				});
+	
+				// Bind the click event handler
+				jQuery(this).on('click', 'a', function(e){
+					// Make the old tab inactive.
+					$active.removeClass('active');
+					$content.hide();
+	
+					// Update the variables with the new link and content
+					$active = jQuery(this);
+					$content = jQuery(jQuery(this).attr('href'));
+	
+					// Make the tab active.
+					$active.addClass('active');
+					$content.show();
+	
+					// Prevent the anchor's default click action
+					e.preventDefault();
+				});
+			});   
+        jQuery('#form_salvar').validate({
+			rules: {
+				no_login:{required: true, remote: '<?php echo $this->baseUrl ?>/usuario/validalogin/id_usuario/<?php echo $this->usuario['id_usuario']; ?>'},
+				no_email:{required: true, email: true, remote: '<?php echo $this->baseUrl ?>/usuario/validaemail/id_usuario/<?php echo $this->usuario['id_usuario']; ?>'}
+			},
+			submitHandler: function(form){  
+                var dados = jQuery(form).serialize();  
+                jQuery.post('<?php echo $this->baseUrl ?>/usuario/salvar', dados)
+				.success(function(dados) { 
+					acao('/usuario');
+					mensagem(dados);
+				})
+				.error(function() {  })
+				.complete(function() { });  
+  
+                return false;  
+            }  
+        });  
+});
+</script>
+
+<div id="editar">
+				<p class="caminho"></p>
+				<ul class="tabs">
+					<li><a>Usu&aacute;rio</a></li>
+				</ul>
+				<div id="tab1">
+					<form method="post" action="#" class="form" id="form_salvar" name="form_salvar">
+						<div class="container_col">
+						<div class="col3">
+							<p class="tit_form">Dados</p>
+							<div class="row">
+								<label for="nome">Nome completo:</label>
+								<input type="hidden" name="id_usuario" value="<?php echo $this->usuario['id_usuario']?>" />
+								<input type="text" name="no_usuario" value="<?php echo $this->usuario['no_usuario']?>" size="33" class="required" minLength="6" maxLength="100"/>
+							</div> <!-- fecha row -->
+
+							<div class="row">
+								<label for="login">Login:</label>
+								<input type="text" name="no_login" value="<?php echo $this->usuario['no_login']?>" size="20" />
+							</div> <!-- fecha row -->
+
+							<div class="row">
+								<label for="email">E-mail:</label>
+								<input type="text" name="no_email" value="<?php echo $this->usuario['no_email']?>" size="33" />
+							</div> <!-- fecha row -->
+							
+							<div class="row">
+								<label for="senha">Senha:</label>
+								<input type="password" name="no_senha" value="" id="senha" minLength="6" maxlength="8" size="20" /> 
+							</div> <!-- fecha row -->
+
+							<div class="row">
+								<label for="confsenha">Confirmar Senha:</label>
+								<input type="password" name="no_csenha" value="" equalTo="#senha" minLength="6" maxlength="8" size="20" /> 
+							</div> <!-- fecha row -->
+						</div><!-- fecha col-->
+						<div class="col3">
+						</div>
+						
+						</div>
+						<div  class="clearfix"> </div>
+						<p class="obrigatorio">* campo(s) obrigat&oacute;rio(s)</p>
+						<div class="btn">
+							<a href="javascript:acao('/usuario')" class="uibutton" id="btnCancelar">Cancelar</a>
+							<input type="submit" value="Salvar" class="uibutton" id="btnSalvar"/>
+						</div><!-- fecha btn-->
+						
+					</form>
+				</div><!-- fecha tab1 -->
+
+			</div><!-- fecha listagemClientes -->

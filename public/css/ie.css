@@ -1,0 +1,106 @@
+.col {
+	width: 255px; /* 250 */
+	border: 1px solid transparent;
+}
+.col3 {
+	width: 600px; /* 250 */
+	border: 1px solid transparent;
+}
+#boxes #modal {
+  width:935px; 
+  height:450px;
+  padding:10px;
+  background-color:#ffffff;
+}
+div #tab1, div #tab2 {
+	width: 922px; /* 815 */
+}
+#menu, #alertas  {
+	width: 96%;
+}
+.nav1 {
+	height: 10px;
+}
+.nav2 {	
+	/* Para Mozilla/Gecko (Firefox etc) */
+	background: -moz-linear-gradient(top, white, #999999) repeat-X ;
+
+	/* Para WebKit (Safari, Google Chrome etc) */
+	background: -webkit-gradient(linear, left top, left bottom, from(white), to(#999999)) repeat-X;
+
+	/* Para IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=white, endColorstr=#999999)";
+
+	/* Para IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=white, endColorstr=#999999);
+}
+.nav3 {
+	height:10px;
+}
+* html .container { position:absolute }
+.container {
+	width:98%;
+	margin: 0 1% 0 1%;
+}
+.col3 label.error {
+	font-size:10px;
+	color: #5e5e5e; 
+	position:relative; 
+	height:2px;
+	float:left;
+	margin-left:66px; 
+	margin-top:-4px; 
+	width:180px; 
+	display: inline;
+}
+.col label.error {
+	font-size:10px;
+	color: #5e5e5e; 
+	position:relative; 
+	height:2px;
+	float:left;
+	margin-left:45px; 
+	margin-top:-4px; 
+	width:180px; 
+	display: inline;
+}
+.load {
+	position:absolute; 
+	left:650px; 
+	top: 230px; 
+	display:none;
+	z-index:99;
+}
+#alertas span.alertas {
+	border: 0px solid white;
+	padding:0 0 0 0;
+	float:right;
+	display:inline-block;
+	text-align:center;
+	width: 14px;
+	height:17px;
+	top:-21px;
+}
+#mensagem {
+	border: 2px outset #00BFFF;
+	position: absolute;
+	top: 20px;
+	
+	display:none;
+	
+	
+	/* Para Mozilla/Gecko (Firefox etc) */
+	/* background: -moz-linear-gradient(top, #6699CC, #336699) repeat-X ;
+	/* Para WebKit (Safari, Google Chrome etc) */
+	/* background: -webkit-gradient(linear, left top, left bottom, from(#6699CC), to(#336699)) repeat-X;
+	/* Para IE 8 */
+	/* -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#6699CC, endColorstr=#336699)";
+	/* Para IE 5.5 - 7 */
+	/* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6699CC, endColorstr=#336699); */
+	text-align:center;
+	color:white;
+	padding: 2px 55px 2px 55px;
+	margin-top: 10px;
+	font: 12px Verdana;
+	font-weight: bold;
+}
